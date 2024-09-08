@@ -28,6 +28,12 @@ export class Acciones{
         return this.precioActual;
     }
 
+    // Editar precio y agregar al historial(Actualizar)
+    public modPrecio(nuevoPrecio: number): void{
+        this.precioActual = nuevoPrecio
+        this.historialPrecios.push(this.precioActual)
+    }
+
     // Obtener historial de precios
     public getHistorial(): number[]{
         return this.historialPrecios;
@@ -36,5 +42,10 @@ export class Acciones{
     // obtener cantidad de acciones disponibles
     public getCantidad(): number{
         return this.cantidad
+    }
+
+    // Modificar la cantidad de acciones disponibles
+    public modCantidad(nuevaCantidad: number): void{
+        this.cantidad = nuevaCantidad
     }
 }
