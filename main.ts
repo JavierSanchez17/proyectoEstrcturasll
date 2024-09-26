@@ -1,12 +1,15 @@
-import { MaxHeap } from "./monticulos/maxheap";
+import { ProcessMerch } from "./proccesmerch"
 
-let ventas: MaxHeap = new MaxHeap(10)
+let compra1: ProcessMerch = new ProcessMerch
+let compra2: ProcessMerch = new ProcessMerch
 
-ventas.insert("AAPL", "Apple INC.", 60, 500)
-ventas.insert("AAPL", "Apple INC.", 50, 500)
-ventas.insert("AAPL", "Apple INC.", 32.5, 500)
-ventas.insert("AAPL", "Apple INC.", 8.6, 500)
+compra1.addVenta("^IXIC", "NASDAQ Composite", 16900, 12)
+compra2.addVenta("GC=F", "Gold Dec 24", 2615.20, 80)
 
-console.log(ventas.checkMax())
+compra1.addCompra("^IXIC", "NASDAQ Composite", 17000, 12)
+compra2.addCompra("GC=F", "Gold Dec 24", 2200.20, 16)
 
-ventas.print()
+compra1.addCompra("^IXIC", "NASDAQ Composite", 16500, 5)
+
+console.log(compra1.mostrarHistorial())
+console.log(compra2.mostrarHistorial())
